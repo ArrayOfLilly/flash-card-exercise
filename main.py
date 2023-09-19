@@ -287,28 +287,28 @@ def set_front_side_forth():
 
 
 def set_back_side_forth():
-    if len(current_card["DEFINITION"]) <= 17 and current_card_isnull['Notes, Examples']:
+    if len(current_card["Definition"]) <= 17 and current_card_isnull['Notes, Examples']:
         print("Case 1.1")
         canvas.itemconfig(card_content, font=(FONT_NAME, MAX_DEFINITION_FONT_SIZE, 'bold'))
         canvas.coords(card_content, 400, DEFINITION_YCOR_MEDIUM)
 
         canvas.itemconfig(card_notes, font=(FONT_NAME, MAX_NOTES_FONT_SIZE, 'italic'))
         canvas.coords(card_notes, 400, NOTES_YCOR_LOWER_MEDIUM)
-    elif len(current_card["DEFINITION"]) <= 17 and len(current_card["Notes, Examples"]) <= 35:
+    elif len(current_card["Definition"]) <= 17 and len(current_card["Notes, Examples"]) <= 35:
         print("Case 1.2")
         canvas.itemconfig(card_content, font=(FONT_NAME, MAX_DEFINITION_FONT_SIZE, 'bold'))
         canvas.coords(card_content, 400, DEFINITION_YCOR_MEDIUM)
 
         canvas.itemconfig(card_notes, font=(FONT_NAME, MAX_NOTES_FONT_SIZE, 'italic'))
         canvas.coords(card_notes, 400, NOTES_YCOR_LOWER_MEDIUM)
-    elif len(current_card["DEFINITION"]) <= 17 and 35 < len(current_card["Notes, Examples"]) <= 70:
+    elif len(current_card["Definition"]) <= 17 and 35 < len(current_card["Notes, Examples"]) <= 70:
         print("Case 1.3")
         canvas.itemconfig(card_content, font=(FONT_NAME, MAX_DEFINITION_FONT_SIZE, 'bold'))
         canvas.coords(card_content, 400, DEFINITION_YCOR_MEDIUM)
 
         canvas.itemconfig(card_notes, font=(FONT_NAME, MAX_NOTES_FONT_SIZE, 'italic'))
         canvas.coords(card_notes, 400, NOTES_YCOR_LOWER_MEDIUM)
-    elif len(current_card["DEFINITION"]) <= 17 and 70 < len(current_card["Notes, Examples"]):
+    elif len(current_card["Definition"]) <= 17 and 70 < len(current_card["Notes, Examples"]):
         print("Case 1.4")
         canvas.itemconfig(card_content, font=(FONT_NAME, MAX_DEFINITION_FONT_SIZE, 'bold'))
         canvas.coords(card_content, 400, DEFINITION_YCOR_TOP)
@@ -316,7 +316,7 @@ def set_back_side_forth():
         canvas.itemconfig(card_notes, font=(FONT_NAME, MAX_NOTES_FONT_SIZE, 'italic'))
         canvas.coords(card_notes, 400, NOTES_YCOR_LOWER_MEDIUM)
     # Same as CASE_1_1
-    elif 17 < len(current_card["DEFINITION"]) <= 34 and current_card_isnull['Notes, Examples']:
+    elif 17 < len(current_card["Definition"]) <= 34 and current_card_isnull['Notes, Examples']:
         print("Case 2.1")
         canvas.itemconfig(card_content, font=(FONT_NAME, MAX_DEFINITION_FONT_SIZE, 'bold'))
         canvas.coords(card_content, 400, DEFINITION_YCOR_BOTTOM)
@@ -324,7 +324,7 @@ def set_back_side_forth():
         canvas.itemconfig(card_notes, font=(FONT_NAME, MAX_NOTES_FONT_SIZE, 'italic'))
         canvas.coords(card_notes, 400, NOTES_YCOR_LOWER_MEDIUM)
     # Same as CASE_1_1
-    elif 17 < len(current_card["DEFINITION"]) <= 34 and len(current_card["Notes, Examples"]) <= 35:
+    elif 17 < len(current_card["Definition"]) <= 34 and len(current_card["Notes, Examples"]) <= 35:
         print("Case 2.2")
         canvas.itemconfig(card_content, font=(FONT_NAME, MAX_DEFINITION_FONT_SIZE, 'bold'))
         canvas.coords(card_content, 400, DEFINITION_YCOR_MEDIUM)
@@ -332,21 +332,21 @@ def set_back_side_forth():
         canvas.itemconfig(card_notes, font=(FONT_NAME, MAX_NOTES_FONT_SIZE, 'italic'))
         canvas.coords(card_notes, 400, NOTES_YCOR_BOTTOM)
     # Same as CASE_1_2
-    elif 17 < len(current_card["DEFINITION"]) <= 34 and 35 < len(current_card["Notes, Examples"]) <= 70:
+    elif 17 < len(current_card["Definition"]) <= 34 and 35 < len(current_card["Notes, Examples"]) <= 70:
         print("Case 2.3")
         canvas.itemconfig(card_content, font=(FONT_NAME, MAX_DEFINITION_FONT_SIZE, 'bold'))
         canvas.coords(card_content, 400, DEFINITION_YCOR_MEDIUM)
 
         canvas.itemconfig(card_notes, font=(FONT_NAME, MAX_NOTES_FONT_SIZE, 'italic'))
         canvas.coords(card_notes, 400, NOTES_YCOR_BOTTOM)
-    elif 17 < len(current_card["DEFINITION"]) <= 34 and 70 < len(current_card["Notes, Examples"]):
+    elif 17 < len(current_card["Definition"]) <= 34 and 70 < len(current_card["Notes, Examples"]):
         print("Case 2.4")
         canvas.itemconfig(card_content, font=(FONT_NAME, 50, 'bold'))
         canvas.coords(card_content, 400, DEFINITION_YCOR_MEDIUM)
 
         canvas.itemconfig(card_notes, font=(FONT_NAME, MIN_NOTES_FONT_SIZE, 'italic'))
         canvas.coords(card_notes, 400, NOTES_YCOR_LOWER_MEDIUM)
-    elif 34 < len(current_card["DEFINITION"]) and current_card_isnull['Notes, Examples']:
+    elif 34 < len(current_card["Definition"]) and current_card_isnull['Notes, Examples']:
         print("Case 3.1")
         canvas.itemconfig(card_content, font=(FONT_NAME, MEDIUM_DEFINITION_FONT_SIZE, 'bold'))
         canvas.coords(card_content, 400, DEFINITION_YCOR_BOTTOM)
@@ -354,21 +354,21 @@ def set_back_side_forth():
         canvas.itemconfig(card_notes, font=(FONT_NAME, MAX_NOTES_FONT_SIZE, 'italic'))
         canvas.coords(card_notes, 400, NOTES_YCOR_BOTTOM)
     # Same as CASE_3_1
-    elif 34 < len(current_card["DEFINITION"]) and len(current_card["Notes, Examples"]) <= 35:
+    elif 34 < len(current_card["Definition"]) and len(current_card["Notes, Examples"]) <= 35:
         print("Case 3.2")
         canvas.itemconfig(card_content, font=(FONT_NAME, MEDIUM_DEFINITION_FONT_SIZE, 'bold'))
         canvas.coords(card_content, 400, DEFINITION_YCOR_MEDIUM)
 
         canvas.itemconfig(card_notes, font=(FONT_NAME, MAX_NOTES_FONT_SIZE, 'italic'))
         canvas.coords(card_notes, 400, NOTES_YCOR_BOTTOM)
-    elif 34 < len(current_card["DEFINITION"]) and 35 < len(current_card["Notes, Examples"]) <= 70:
+    elif 34 < len(current_card["Definition"]) and 35 < len(current_card["Notes, Examples"]) <= 70:
         print("Case 3.3")
         canvas.itemconfig(card_content, font=(FONT_NAME, MEDIUM_DEFINITION_FONT_SIZE, 'bold'))
         canvas.coords(card_content, 400, DEFINITION_YCOR_MEDIUM)
 
         canvas.itemconfig(card_notes, font=(FONT_NAME, MIN_NOTES_FONT_SIZE, 'italic'))
         canvas.coords(card_notes, 400, NOTES_YCOR_BOTTOM)
-    elif 34 < len(current_card["DEFINITION"]) and 70 < len(current_card["Notes, Examples"]):
+    elif 34 < len(current_card["Definition"]) and 70 < len(current_card["Notes, Examples"]):
         print("Case 3.4")
         canvas.itemconfig(card_content, font=(FONT_NAME, MIN_DEFINITION_FONT_SIZE, 'bold'))
         canvas.coords(card_content, 400, DEFINITION_YCOR_MEDIUM)
