@@ -5,6 +5,7 @@ import tkmacosx
 import pandas as pd
 import time
 import os
+import urllib, webbrowser
 
 # -------------------------- CONSTANTS, GLOBAL VARIABLE DECLARATIONS -------------------------- #
 
@@ -74,7 +75,7 @@ exit_image = ""
 
 
 def set_learnset():
-    data = pd.read_csv("data/own_dict.csv")
+    data = pd.read_csv("data/Vocab/own_dict.csv")
     to_learn = data.to_dict(orient='records')
     data_to_dump = pd.DataFrame(to_learn)
     data_to_dump.to_csv("data/learn_set.csv")
@@ -214,7 +215,10 @@ def change_gui():
 
     hit_image = t.PhotoImage(file="img/hit.png")
     miss_image = t.PhotoImage(file="img/miss.png")
-    language_switcher_image = t.PhotoImage(file="img/lang.png")
+    if direction == 1:
+        language_switcher_image = foreign_language_image
+    else:
+        language_switcher_image = native_language_image
     back_image = t.PhotoImage(file="img/back.png")
     refresh_image = t.PhotoImage(file="img/refresh.png")
     exit_image = t.PhotoImage(file="img/exit.png")
@@ -380,7 +384,7 @@ def next_card():
         canvas.itemconfig(card_notes, text="")
 
     change_gui()
-    set_text_size_and_position(1)
+    set_text_size_and_position(direction)
 
     flip_timer = root.after(6000, func=flip_card)
 
@@ -404,13 +408,14 @@ def set_direction():
     global direction, language_switcher_image
 
     if direction == 1:
-        btn_language_switcher.config(image=native_language_image)
+        language_switcher_image = foreign_language_image
         title.config(text="From Native to Foreign Language")
     else:
-        btn_language_switcher.config(image=foreign_language_image)
+        language_switcher_image = native_language_image
         title.config(text="From Foreign to Native Language")
     direction *= -1
     next_card()
+
 
 
 def show_current():
@@ -517,10 +522,17 @@ btn_exit.grid(row=3, column=3)
 
 foreign_language_image = t.PhotoImage(file="img/lang.png")
 native_language_image = t.PhotoImage(file="img/lang2.png")
-btn_language_switcher = tkmacosx.Button(image=foreign_language_image, command=set_direction, focuscolor='',
+language_switcher_image= foreign_language_image
+btn_language_switcher = tkmacosx.Button(image=language_switcher_image, command=set_direction, focuscolor='',
                                         background=random_color, highlightthickness=0, borderless=1,
                                         activebackground=random_color)
 btn_language_switcher.grid(row=0, rowspan=2, column=3)
+
+# -------------------------- EXTRA -------------------------- #
+
+# TODO open browser with Google Translate Term
+# TODO Stop + Reveal instead of auto flip card
+# TODO Say the word
 
 # -------------------------- Logic -------------------------- #
 
